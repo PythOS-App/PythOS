@@ -14,12 +14,14 @@ PythOS_Ver = "Indev 2.1.0"
 print("PythOS - The new way to use Python.")
 ProcessorType = 1
 print("Running PythOS on AMD64")
+fname = ""
+sname = ""
 def login():
     print()
+    global fname
+    global sname
     fname = input("Type in your first name: ")
-    return fname
     sname = input("Type in your surname: ")
-    return sname
     print()
     print()
 def load(fname, sname):
@@ -37,6 +39,7 @@ ShutDown = False
 login()
 load()
 # Now PythOS has loaded, we can create the actual operating system. But, we need to make a loop so that you can type in a command and then type in a new one.
+
 while ShutDown == False:
     
     print()
