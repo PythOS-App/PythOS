@@ -1,5 +1,5 @@
-# PythOS-Text 👨🏻‍💻
-PythOS in Python text console
+# PythOS 👨🏻‍💻
+The newest way to use Python
 
 ## Requirments ✔️
 - Python 3.8 or higher (eg. ![PythOS README md VERSION MATTERS!!!](https://user-images.githubusercontent.com/90992828/190842302-e3ec8367-0e7d-43e6-8549-c4e94c2f07d3.PNG) ).
