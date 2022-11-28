@@ -13,3 +13,5 @@ The newest way to use Python
 ![PythOS README md Example of Python software](https://user-images.githubusercontent.com/90992828/190842443-0bbb56ca-88e3-4fe4-9c8d-c7c1a7642287.PNG)
 
 
+## Error code meanings ❌
+All errors come in x64 (64-bit) and x86 (32-bit) varients, depending on what you set the processor type to.
