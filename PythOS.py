@@ -6,7 +6,7 @@ Created on Sun Aug 29 13:08:33 2021
 @author: Charlie K.'Captain Awesome Junior'
 """ 
 
-# Changes in PythOS Indev 2.2.0: Added PythOS PRO (BETA)
+# Changes in PythOS Indev 1.0.0: Added PythOS PRO (BETA)
 # To add the wait functionality, we need to import time.sleep.
 from time import sleep
 PythOS_Ver = "Alpha 1.0.0"
