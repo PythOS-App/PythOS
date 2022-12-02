@@ -2,15 +2,14 @@
 
 ## Supported Versions
 
-> Use this section to tell people about which versions of your project are currently being supported with security updates.
->
-> | Version | Supported          |
-> | ------- | ------------------ |
-> |         |                    |
-> |         |                    |
-> |         |                    |
-> |         |                    |
-This is not yet implemented!
+<Use this section to tell people about which versions of your project are currently being supported with security updates.
+
+| Version (vx.x.x)| Supported          |
+|-----------|------------------|
+|Alpha v1.0.0 | Yes  ✅ |
+ Indev v2.1.1 (stable)        |      Yes    ✅          |
+| Indev v2.1.1 (beta 1)        |     No    ❌           |
+|  Indev 2.1.0       |           No      ❌   |
 
 ## Reporting a Vulnerability
 
