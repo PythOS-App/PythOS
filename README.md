@@ -23,7 +23,7 @@ The newest way to use Python!
 
 ## Error code meanings ❌
 All errors come in x64 (64-bit) and x86 (32-bit) varients, depending on what you set the processor type to.
-- 55-73-65-72 - User-initiated crash using $STOPCRASH$ command
+- 55-73-65-72 - User-initiated crash using $ STOPCRASH $ command
 - 50-50-72-6F - Error opening the PythOS Pro uttillity[^2].
 
 [^1]: @captainawesomejnr has tried _Python Interpreter_ and _Python3IDE_ for iPad which both use Python 3.5 and the `input` command resulted in an error. However, coding books say differently so just stick away from those apps.
