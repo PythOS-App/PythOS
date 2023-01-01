@@ -6,7 +6,7 @@ Use this section to tell people about which versions of your project are current
 
 | Version (vx.x.x)| Supported          |
 |-----------|------------------|
-|Alpha v1.0.0 | Yes  ✅ |
+|Alpha v1.0.0 (Xmas edition included in supportance) | Yes  ✅ |
  Indev v2.1.1 (stable)        |      Yes    ✅          |
 | Indev v2.1.1 (beta 1)        |     No    ❌           |
 |  Indev 2.1.0       |           No      ❌   |
