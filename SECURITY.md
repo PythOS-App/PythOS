@@ -13,4 +13,4 @@ Use this section to tell people about which versions of your project are current
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, create an issue with the template "Vulnerability Report" and fill in the details asked in the template.
+**To report a vulnerability during work hours (9am-5pm Melbourne Time, GMT+10/+11) or while I am _not_ marked as busy, create an issue with the template "Vulnerability Report" and fill in the details asked in the template.** Or, at any time, draft a security advisitory for me. That way, I don't have to do it myself at 3am in the morning.
