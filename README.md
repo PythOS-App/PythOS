@@ -12,14 +12,6 @@ The newest way to use Python!
 - A compatible Python IDE (eg. Spyder Anaconda4, Thonny or Python IDLE).
 ![PythOS README md Example of Python software](https://user-images.githubusercontent.com/90992828/190842443-0bbb56ca-88e3-4fe4-9c8d-c7c1a7642287.PNG)
 
-## Deletions 🗑️
-| Version (vx.x.x)| To delete          |
-|-----------|------------------|
-|Alpha v1.0.0 | PythOS Tempoary Copy.py |
- Indev v2.1.1 (stable)        |      PythOS.py        |
-| Indev v2.1.1 (beta 1)        |     None    ❌           |
-|  Indev 2.1.0       |           None      ❌   |
-
 
 ## Error code meanings ❌
 All errors come in x64 (64-bit) and x86 (32-bit) varients, depending on what you set the processor type to.
