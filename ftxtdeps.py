@@ -40,7 +40,10 @@ def autoResetResume():
     # Bypass print and push the reset sequence directly to the underlying terminal
     _ORIGINAL_STDOUT.write("\x1b[0m")
     _ORIGINAL_STDOUT.flush()
-
+    
+class AutoReset:
+    PAUSE = autoResetPause()
+    RESUME = autoResetResume()
 
 class FancyStreamWrapper:
     # A proxy stream that intercepts standard prints to inject resets. 
