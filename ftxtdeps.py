@@ -3,22 +3,9 @@
 import sys
 import os
 
-def autoResetPause():
-    # Stop auto-resetting lines automatically.
-    if isinstance(sys.stdout, FancyStreamWrapper):
-        sys.stdout.enabled = False
 
-def autoResetResume():
-    # Re-engage line-by-line auto-resetting and clear remaining styles.
-    if isinstance(sys.stdout, FancyStreamWrapper):
-        sys.stdout.enabled = True
-    # Bypass print and push the reset sequence directly to the underlying terminal
-    _ORIGINAL_STDOUT.write("\x1b[0m")
-    _ORIGINAL_STDOUT.flush()
 
-def clear():
-    # 'nt' means Windows, 'posix' covers Linux and macOS
-    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 class Fore:
     BLACK   = "\x1b[30m"
@@ -47,11 +34,28 @@ class Style:
     RESET      = "\x1b[0m"     # Turns off EVERYTHING (colors + fonts)
 
 class AutoReset:
+    def autoResetPause():
+        # Stop auto-resetting lines automatically.
+        if isinstance(sys.stdout, FancyStreamWrapper):
+            sys.stdout.enabled = False
+
+    def autoResetResume():
+        # Re-engage line-by-line auto-resetting and clear remaining styles.
+        if isinstance(sys.stdout, FancyStreamWrapper):
+            sys.stdout.enabled = True
+        # Bypass print and push the reset sequence directly to the underlying terminal
+        _ORIGINAL_STDOUT.write("\x1b[0m")
+        _ORIGINAL_STDOUT.flush()
+    
     PAUSE  = autoResetPause()
     RESUME = autoResetResume()
 
 class Screen:
+    def clear():
+        # 'nt' means Windows, 'posix' covers Linux and macOS
+        os.system('cls' if os.name == 'nt' else 'clear')
     CLEAR   = clear()
+    CLRSCRL = print("\x1b[3J")
     DELCHAR = "\x1b[P"
 
 class FancyStreamWrapper:
