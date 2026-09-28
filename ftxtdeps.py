@@ -4,12 +4,12 @@ import sys
 import os
 
 def autoResetPause():
-    """Stop auto-resetting lines automatically."""
+    # Stop auto-resetting lines automatically.
     if isinstance(sys.stdout, FancyStreamWrapper):
         sys.stdout.enabled = False
 
 def autoResetResume():
-    """Re-engage line-by-line auto-resetting and clear remaining styles."""
+    # Re-engage line-by-line auto-resetting and clear remaining styles.
     if isinstance(sys.stdout, FancyStreamWrapper):
         sys.stdout.enabled = True
     # Bypass print and push the reset sequence directly to the underlying terminal
@@ -61,8 +61,8 @@ class FancyStreamWrapper:
         self.enabled = True  # Added enabled flag for pause/resume functions
 
     def write(self, text):
-        # Restored bulletproof newline auto-reset logic.
-        # This keeps your multi-colored banners safe from mid-line resets!
+        # Bulletproof newline auto-reset logic.
+        # This keeps multi-colored banners safe from mid-line resets!
         if self.enabled and text == "\n":
             self.wrapped_stream.write("\x1b[0m\n")
         else:
