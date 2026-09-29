@@ -1,10 +1,12 @@
 import json
 import os
 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #BASE_DIR = os.path.join('C:\Users\s1089491\OneDrive - Haileybury\PythOS')
-#JSON_PATH = os.path.join(BASE_DIR, 'applist.json')
-filePath = r'C:\Users\s1089491\OneDrive - Haileybury\PythOS\applist.json'
+filePath = os.path.join(BASE_DIR, 'applist.json')
+#filePath = r'C:\Users\s1089491\OneDrive - Haileybury\PythOS\applist.json'
+data = {}
+appList = {}
 
 def openList():
     with open(filePath, 'r', encoding='utf-8') as file:

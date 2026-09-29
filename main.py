@@ -6,6 +6,7 @@ import importlib
 appList = appd.openList()
 appCmds = []
 
+
 cmdLineRunning = True
 while cmdLineRunning:
     sysd.clear()
@@ -18,13 +19,14 @@ while cmdLineRunning:
     if appSelection in appCmds:
         if appSelection == "exit":
             cmdLineRunning = False
-            print("PythOS has been shut down.")
+            
+            print(f"{ftd.Fore.GREEN}PythOS has been shut down.{ftd.Style.RESET}")
         else:
             try:
                 app = importlib.import_module(appSelection)
-            except:
-                sysd.stopCode("63-72-75-6E", "app_launch_error")
+            except Exception:
+                sysd.stopCode("63-72-75-6E", "app_launch_error", f"The app '{appSelection}' could not be launched.")
     else:
-        sysd.stopCode("63-72-75-6E", "cmd_unknown")
+        sysd.stopCode("63-72-75-6E", "cmd_unknown", "That command is not recognized. Please select a valid app from the list.")
     
     

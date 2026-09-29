@@ -2,7 +2,7 @@
     {
         "identifier": "pgui.activated",
         "friendlyName": "PythOS Pro Activation Status",
-        "state": false,
+        "state": true,
         "datatype": "boolean",
         "modifiable": true
     },
@@ -16,7 +16,7 @@
     {
         "identifier": "sys.usernamea",
         "friendlyName": "Username",
-        "state": "",
+        "state": "e",
         "datatype": "string",
         "modifiable": true
     }

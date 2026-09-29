@@ -3,10 +3,6 @@
 import sys
 import os
 
-
-
-
-
 class Fore:
     BLACK   = "\x1b[30m"
     RED     = "\x1b[31m"
@@ -33,28 +29,13 @@ class Style:
     NORMAL     = "\x1b[22m"    # Turns off ONLY Bold and Dim (leaves colors alone)
     RESET      = "\x1b[0m"     # Turns off EVERYTHING (colors + fonts)
 
-class AutoReset:
-    def autoResetPause():
-        # Stop auto-resetting lines automatically.
-        if isinstance(sys.stdout, FancyStreamWrapper):
-            sys.stdout.enabled = False
 
-    def autoResetResume():
-        # Re-engage line-by-line auto-resetting and clear remaining styles.
-        if isinstance(sys.stdout, FancyStreamWrapper):
-            sys.stdout.enabled = True
-        # Bypass print and push the reset sequence directly to the underlying terminal
-        _ORIGINAL_STDOUT.write("\x1b[0m")
-        _ORIGINAL_STDOUT.flush()
-    
-    PAUSE  = autoResetPause()
-    RESUME = autoResetResume()
 
 class Screen:
     def clear():
         # 'nt' means Windows, 'posix' covers Linux and macOS
         os.system('cls' if os.name == 'nt' else 'clear')
-    CLEAR   = clear()
+    CLEAR   = os.system('cls' if os.name == 'nt' else 'clear')
     CLRSCRL = print("\x1b[3J")
     DELCHAR = "\x1b[P"
 
@@ -75,6 +56,8 @@ class FancyStreamWrapper:
     def flush(self):
         """Required so functions like print() can clear the buffer."""
         self.wrapped_stream.flush()
+
+
 
 # =======================================================
 # INITIALISATION FOR WINDOWS (conhost.exe zero-dependency)
@@ -120,3 +103,20 @@ if sys.platform == "win32":
 
 # 3. Hijack stdout with your custom proxy stream
 sys.stdout = FancyStreamWrapper(_ORIGINAL_STDOUT)
+
+class AutoReset:
+    def autoResetPause():
+        # Stop auto-resetting lines automatically.
+        if isinstance(sys.stdout, FancyStreamWrapper):
+            sys.stdout.enabled = False
+
+    def autoResetResume():
+        # Re-engage line-by-line auto-resetting and clear remaining styles.
+        if isinstance(sys.stdout, FancyStreamWrapper):
+            sys.stdout.enabled = True
+        # Bypass print and push the reset sequence directly to the underlying terminal
+        _ORIGINAL_STDOUT.write("\x1b[0m")
+        _ORIGINAL_STDOUT.flush()
+    
+    PAUSE  = autoResetPause()
+    RESUME = autoResetResume()

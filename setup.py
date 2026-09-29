@@ -76,7 +76,7 @@ try:
     with zipfile.ZipFile(source_zip_path, 'r') as zip_ref:
         zip_ref.extractall(folder_path)
     print(f"Successfully installed PythOS in: {folder_path}")
-    input(f"Press {SysKey.GO} to continue setup...")
+    input(f"Press {SysKey.GO} to finish setup...")
     
 except FileNotFoundError:
     SetupStopCode("ZipNotFound","setup",f"'source.zip' was not found in the script directory ({script_dir}).")

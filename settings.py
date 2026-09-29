@@ -1,6 +1,10 @@
 import ftxtdeps as ftd
+from ftxtdeps import Style, Fore, Back, Screen, AutoReset
 import json
 import sysdeps as sysd
+
+def appInfo():
+    return "PythOS Settings"
 
 def importSettings():
     with open('settings.json', 'r', encoding='utf-8') as file:
@@ -21,7 +25,7 @@ settingsList = importSettings()
 running = True
 while running:
     sysd.clear()
-    print(f"{Style.BOLD}PythOS Settings {Style.NORMAL + Style.DIM}Version: {sysver}{Style.NORMAL}")
+    print(f"{ftd.Style.BOLD}PythOS Settings {ftd.Style.NORMAL + ftd.Style.DIM}Version: {sysver}{ftd.Style.NORMAL}")
     print("You can change the following settings:")
     
     # 1. Loop through the list and display the friendly names with a number
@@ -61,10 +65,10 @@ while running:
             else:
                 selected_setting['state'] = new_value
                 
-            input(f"""{Fore.GREEN}{Style.BOLD}Updated successfully!{Style.RESET}\nPress Enter to continue...""")
+            input(f"""{ftd.Fore.GREEN}{ftd.Style.BOLD}Updated successfully!{ftd.Style.RESET}\nPress Enter to continue...""")
             
         else:
-            print(f"{Fore.RED}{Style.BOLD}Invalid choice. Please pick a number from the list."{Style.RESET})
-            
+            print(f"{ftd.Fore.RED + ftd.Style.BOLD}Invalid choice. Please pick a number from the list.{ftd.Style.RESET}")
+        
     except ValueError:
         print("Please enter a valid number.")
