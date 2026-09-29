@@ -1,7 +1,5 @@
 {
     "exit": "Exit PythOS",
     "settings": "PythOS Settings",
-    "appinst": "PythOS App Installer",
-    "help": "PythOS Help",
-    "pgui": "PythOS Pro GUI"
+    "appinst": "PythOS App Installer"
     }
