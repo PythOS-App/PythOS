@@ -2,7 +2,7 @@
     {
         "identifier": "sys.language",
         "friendlyName": "System Language",
-        "state": "ru",
+        "state": "",
         "datatype": "str",
         "modifiable": true
     },
