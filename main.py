@@ -24,6 +24,7 @@ while cmdLineRunning:
         else:
             try:
                 app = importlib.import_module(appSelection)
+                app.appLoop()
             except Exception:
                 sysd.stopCode("63-72-75-6E", "app_launch_error", f"The app '{appSelection}' could not be launched.")
     else:
