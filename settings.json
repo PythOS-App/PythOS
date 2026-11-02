@@ -1,23 +1,30 @@
 [
     {
+        "identifier": "sys.language",
+        "friendlyName": "System Language",
+        "state": "ru",
+        "datatype": "str",
+        "modifiable": true
+    },
+    {
         "identifier": "pgui.activated",
         "friendlyName": "PythOS Pro Activation Status",
         "state": true,
-        "datatype": "boolean",
+        "datatype": "bool",
         "modifiable": true
     },
     {
         "identifier": "pgui.autorun",
         "friendlyName": "Automatically run PythOS Pro",
         "state": false,
-        "datatype": "boolean",
+        "datatype": "bool",
         "modifiable": true
     },
     {
         "identifier": "sys.usernamea",
         "friendlyName": "Username",
-        "state": "e",
-        "datatype": "string",
+        "state": "",
+        "datatype": "str",
         "modifiable": true
     }
 ]
