@@ -4,6 +4,8 @@ import sys
 import time
 import os
 from ftxtdeps import *
+import kbdhndlr as key
+
 
 if platform.system() == "Darwin":
     continueKey = "Return"
@@ -25,10 +27,15 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def gracefulShutdown(sig, frame):
-    sys.exit("PythOS has been quit.")
+    clear()
+    if key.keyboardInterruptBehaviour == key.ExitBehaviours.NORMQUIT:
+        sys.exit("PythOS has been quit.")
+    else:
+        stopCode("unknownInterruptBehaviour", "kbdhndlr", "The interrupt behaviour specidied id unknown to the system. Perhaps you need to update?")
 
 def stopCode(errorcode, origin, description):
     clear()
+    key.keyboardInterruptBehaviour = key.ExitBehaviours.NORMQUIT
     input(f"""{Fore.RED}ERROR!{Style.RESET}
 PythOS ran into a critical error and can't recover.
 
