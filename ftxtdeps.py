@@ -32,11 +32,16 @@ class Style:
 
 
 class Screen:
+    @staticmethod
     def clear():
         # 'nt' means Windows, 'posix' covers Linux and macOS
         os.system('cls' if os.name == 'nt' else 'clear')
-    CLEAR   = os.system('cls' if os.name == 'nt' else 'clear')
-    CLRSCRL = print("\x1b[3J")
+    @staticmethod
+    def clrScrl():
+        # Clears scrollback buffer
+        print("\x1b[3J")
+    CLEAR   = clear
+    CLRSCRL = clrScrl
     DELCHAR = "\x1b[P"
 
 class FancyStreamWrapper:
