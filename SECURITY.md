@@ -2,15 +2,15 @@
 
 ## Supported Versions
 
-The following table lists supported project versions for the PythOS project.
+The following table lists supported versions for the PythOS project. Pre-release versions are not included; once its stable version is released the pre-release is considered unsupported.
  
-| Version (vx.x.x)| Supported          |
-|-----------|------------------|
-|Alpha v2.0.0| Yes ✅ |
-|Alpha v1.0.0 (Xmas edition included in support) | Yes  ✅ |
- Indev v2.1.1 (bug fix 1)        |      Yes    ✅          |
-| Indev v2.1.1 (beta 1 / stable)        |     No    ❌           |
-|  Indev 2.1.0       |           No      ❌   |
+| Version                           | Supported|
+| ----------------------------------|:--------:|
+| Alpha v2.0.0                      | Yes      |
+| Alpha v1.0.0 (incl. Xmas Edition) | Yes      |
+| Indev v2.1.1 (bug fix 1)          | Yes      |
+| Indev v2.1.1 (beta 1 / stable)    | No       |
+| Indev 2.1.0 or earlier            | No       |
 
 ## Reporting a Vulnerability
 
