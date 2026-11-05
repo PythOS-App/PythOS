@@ -1,8 +1,8 @@
 import ftxtdeps as ftd
-from ftxtdeps import Style, Fore, Back, Screen, AutoReset
+import ftxtdeps as ftd
 import json
 import sysdeps as sysd
-import re
+import re # regular expressions
 import syslang
 import os
 
