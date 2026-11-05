@@ -4,6 +4,7 @@ import json
 import sysdeps as sysd
 import re
 import syslang
+import os
 
 def appInfo():
     return "PythOS Settings"
@@ -13,9 +14,25 @@ def importSettings():
         appList = json.load(file)
         return appList
 
-def writeSettings():
-    with open('settings.json', 'w', encoding='utf-8') as file:
-        json.dump(settingsList, file, indent=4) # Fixed assignment bug here
+# 1. Added 'data' as an argument here
+def writeSettings(data):
+    file_path = 'settings.json'
+    temp_file = file_path + ".tmp"
+    
+    try:
+        # 1. Write data to a temporary file first
+        with open(temp_file, 'w') as file:
+            json.dump(data, file, indent=4)
+            
+        # 2. Safely replace the old file with the new one
+        # This operation is atomic—if the system crashes, your old file is untouched!
+        os.replace(temp_file, file_path)
+        
+    except Exception as e:
+        print(f"Error saving settings: {type(e).__name__}: {e}")
+        # Clean up the temp file if it was created
+        if os.path.exists(temp_file):
+            os.remove(temp_file)
 
 def appLoop():
     with open("sysver.txt", "r", encoding="utf-8") as file:
@@ -25,8 +42,8 @@ def appLoop():
 
     running = True
     while running:
-        # If sysd.clear matches ftd.Screen.CLEAR(), make sure it has () too!
-        sysd.clear() 
+        
+        ftd.Screen.CLEAR()
         print(f"{ftd.Style.BOLD}PythOS Settings {ftd.Style.NORMAL + ftd.Style.DIM}Version: {sysver}{ftd.Style.NORMAL}")
         print("You can change the following settings:")
         
@@ -41,7 +58,8 @@ def appLoop():
             
             if choice_num == len(settingsList) + 1:
                 print("Exiting settings menu.")
-                writeSettings()
+                # 2. Passed settingsList here
+                writeSettings(settingsList)
                 running = False
                 break
             
@@ -61,8 +79,8 @@ def appLoop():
                     else:
                         selected_setting['state'] = new_value
                 
-                # Save right away so memory and disk always match up
-                writeSettings()
+                # 3. Passed settingsList here too
+                writeSettings(settingsList)
                 input(f"""\n{ftd.Fore.GREEN}{ftd.Style.BOLD}Updated successfully!{ftd.Style.RESET}\nPress Enter to continue...""")
                 
             else:
