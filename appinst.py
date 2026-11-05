@@ -3,6 +3,8 @@ import appdeps as appd
 import sysdeps as sysd
 import importlib
 
+sysmodules = ["syslang", "appdeps", "ftxtdeps", "sysdeps"]
+
 with open("sysver.txt", "r", encoding="utf-8") as file:
     sysver = file.read()
 
@@ -42,8 +44,8 @@ def appLoop():
             break
         elif appName == "main":
             sysd.stopCode("sys_not_app", "PythOS App Installer", "Cannot install core system functions as apps.")
-            ftd.Screen.CLEAR
-        elif "deps" in appName:
+            ftd.Screen.CLEAR()
+        elif appName in sysmodules:
             sysd.stopCode("dep_not_app", "PythOS App Installer", "Cannot install system dependencies as apps.")
             ftd.Screen.CLEAR()
         elif appName:
