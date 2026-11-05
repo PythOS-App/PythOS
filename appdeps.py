@@ -12,9 +12,13 @@ def openList():
     with open(filePath, 'r', encoding='utf-8') as file:
         # Load the JSON data into a Python variable
         appList = json.load(file)
+    if appList == {} or appList == None:
+        saveList({"exit": "Exit PythOS", "settings": "PythOS Settings", "appinst": "PythOS App Installer"})
+        return {"exit": "Exit PythOS", "settings": "PythOS Settings", "appinst": "PythOS App Installer"}
+    else:
         return appList
 
-def saveList():
+def saveList(data=appList):
     with open(filePath, "w") as file:
         json.dump(data, file, indent=4)
 
