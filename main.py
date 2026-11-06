@@ -9,7 +9,7 @@ appCmds = []
 
 cmdLineRunning = True
 while cmdLineRunning:
-    sysd.clear()
+    ftd.Screen.CLEAR()
     print("What app do you want to launch?")
     for index, (key, value) in enumerate(appList.items(), start = 1):
         print(f"{key}: {value}")
