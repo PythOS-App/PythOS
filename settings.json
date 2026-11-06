@@ -9,7 +9,7 @@
     {
         "identifier": "pgui.activated",
         "friendlyName": "PythOS Pro Activation Status",
-        "state": true,
+        "state": false,
         "datatype": "bool",
         "modifiable": true
     },
