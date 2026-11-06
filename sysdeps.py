@@ -6,6 +6,7 @@ import os
 from ftxtdeps import *
 import kbdhndlr as key
 
+# Deprecated, moved to kbdhndlr
 
 if platform.system() == "Darwin":
     continueKey = "Return"
