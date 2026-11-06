@@ -1,5 +1,6 @@
 {
-    "exit": "Exit PythOS",
     "settings": "PythOS Settings",
-    "appinst": "PythOS App Installer"
-    }
+    "about": "About PythOS",
+    "appinst": "App Installer",
+    "exit": "Exit PythOS"
+}
