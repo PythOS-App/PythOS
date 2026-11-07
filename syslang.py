@@ -1,19 +1,23 @@
 import sysdeps as sysd
 import ftxtdeps as ftd
 import json
+import os
+import templates
 availableLanguages = ["en","zh","ru","de"]
 
+settingsPath = templates.getFileDir("settings.json")
+
 def importSettings():
-    with open("settings.json", "r", encoding="utf-8") as file:
+    with open(settingsPath, "r", encoding="utf-8") as file:
         appList = json.load(file)
         return appList
 
-with open("sysver.txt", "r", encoding="utf-8") as file:
+with open(settingsPath, "r", encoding="utf-8") as file:
     sysver = file.read()
 
 settingsList = importSettings()
 
-def get_setting_by_id(identifier, filename="settings.json"):
+def get_setting_by_id(identifier, filename=settingsPath):
     for item in settingsList:
         if item["identifier"] == identifier:
             return item

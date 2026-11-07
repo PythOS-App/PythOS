@@ -2,10 +2,13 @@ import ftxtdeps as ftd
 import appdeps as appd
 import sysdeps as sysd
 import importlib
+import templates
 
 sysmodules = ["syslang", "appdeps", "ftxtdeps", "sysdeps"]
 
-with open("sysver.txt", "r", encoding="utf-8") as file:
+sysVerPath = templates.getFileDir("sysver.txt")
+
+with open(sysVerPath, "r", encoding="utf-8") as file:
     sysver = file.read()
 
 def appInfo():

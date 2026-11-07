@@ -6,17 +6,26 @@ import re # regular expressions
 import syslang
 import os
 
+
+# Dynamically gets the exact directory where syslang.py is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+settingsPath = os.path.join(script_dir, "settings.json")
+sysver_path = os.path.join(script_dir, "sysver.txt")
+
+
+
+
 def appInfo():
     return "PythOS Settings"
 
 def importSettings():
-    with open('settings.json', 'r', encoding='utf-8') as file:
+    with open(settingsPath, "r", encoding="utf-8") as file:
         appList = json.load(file)
         return appList
 
 # 1. Added 'data' as an argument here
 def writeSettings(data):
-    file_path = 'settings.json'
+    file_path = settingsPath
     temp_file = file_path + ".tmp"
     
     try:
@@ -35,7 +44,7 @@ def writeSettings(data):
             os.remove(temp_file)
 
 def appLoop():
-    with open("sysver.txt", "r", encoding="utf-8") as file:
+    with open(sysver_path, "r", encoding="utf-8") as file:
         sysver = file.read()
 
     settingsList = importSettings()
