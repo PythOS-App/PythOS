@@ -1,3 +1,4 @@
+import templates
 def appLoop():
     CalcFirstNumber = float(input("Type in your first number: "))
     CalcOperation = input("What operation would you like to use?\n\n* = Multiplication\n/ = Division\n^ = Exponentiation")
@@ -17,5 +18,6 @@ def appLoop():
                 print(CalcFirstNumber,"^",CalcSecondNumber, "=", CalcFirstNumber ** CalcSecondNumber)
         else:
                 rerun = input("Error: Your calculation could not be processed. Press ENTER to continue.")
+    templates.enterToContinue()    
 def appInfo():
     return "Calculator"
