@@ -1,5 +1,5 @@
 import ftxtdeps as ftd
-import appdeps as appd
+from filemgmt import App as appd
 import sysdeps as sysd
 import importlib
 import templates
